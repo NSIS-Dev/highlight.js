@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
 	site: 'https://nsis-dev.github.io',
-	base: '/highlight.js/',
+	base: process.env.CI ? '/highlight.js/' : '/',
 	outDir: 'docs',
 	output: 'static',
 	vite: {
