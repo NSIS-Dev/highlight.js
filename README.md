@@ -22,4 +22,4 @@ hljs.highlightAll();
 
 ## License
 
-Highlight.js is released under the BSD License. See [LICENSE](https://raw.githubusercontent.com/highlightjs/highlight.js/master/LICENSE) file for details.
+Released under the [BSD License](LICENSE).
