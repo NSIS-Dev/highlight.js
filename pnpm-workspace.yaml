@@ -7,6 +7,7 @@ publicHoistPattern:
 allowBuilds:
   esbuild: false
   lefthook: true
+  sharp: true
 minimumReleaseAgeExclude:
   - "@idleberg/configs"
   - tsdown@0.22.2

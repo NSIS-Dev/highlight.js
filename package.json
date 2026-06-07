@@ -33,8 +33,12 @@
 		"README.md"
 	],
 	"scripts": {
-		"build": "tsdown",
-		"dev": "tsdown --watch",
+		"build": "concurrently --prefix-colors blue,green,magenta npm:build:*",
+		"build:docs": "astro build",
+		"build:lib": "tsdown",
+		"dev": "concurrently --prefix-colors blue,green,magenta npm:dev:*",
+		"dev:docs": "astro dev --open",
+		"dev:lib": "tsdown --watch",
 		"lint": "concurrently --prefix-colors blue,green,magenta npm:lint:*",
 		"lint:biome": "biome check",
 		"lint:e18e": "e18e-cli analyze --log-level error",
@@ -49,10 +53,13 @@
 		"@commitlint/cli": "^21.0.2",
 		"@commitlint/config-conventional": "^21.0.2",
 		"@idleberg/configs": "^0.4.5",
+		"@tailwindcss/vite": "^4.3.0",
 		"@types/node": "^25.9.2",
+		"astro": "^6.4.4",
 		"concurrently": "^10.0.3",
 		"highlight.js": "^11.11.0",
 		"np": "^11.2.1",
+		"tailwindcss": "^4.3.0",
 		"tsdown": "^0.22.2",
 		"vitest": "^4.1.8"
 	},

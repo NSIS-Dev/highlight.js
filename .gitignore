@@ -11,6 +11,9 @@ bin/
 dist/
 lib/
 
+# caches
+.astro/
+
 # tests
 coverage/
 test-results/

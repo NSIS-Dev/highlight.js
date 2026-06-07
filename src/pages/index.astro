@@ -1,0 +1,79 @@
+---
+import './global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="NSIS syntax highlighting for highlight.js" />
+    <title>Demo | @nsis/highlight.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css" integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="dist/nsis.mjs" type="module"></script>
+  </head>
+  <body class="flex flex-col bg-grey-lighter dark:bg-gray-800 h-screen p-4 font-sans">
+    <main class="container mx-auto flex justify-center">
+      <div class="mx-5 w-full lg:w-2/3 md:mx-0">
+        <h1 class="text-2xl tracking-tight text-gray-900">
+          <span class="block xl:inline">@nsis/highlight.js</span>
+        </h1>
+
+        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+          A syntax definition for <a class="text-indigo-600" href="https://nsis.sourceforge.io">NSIS</a> to use with <a class="text-indigo-600" href="https://highlightjs.org/">highlight.js</a>, a syntax highlighter written in JavaScript.
+        </p>
+
+        <div class="mt-8 lex lg:mt-5 lg:flex-shrink-0">
+          <label class="font-semibold" for="editor">Example</label>
+          <pre class="mt-3"><code class="language-nsis">; The name of the installer
+Name "Example1"
+
+; The file to write
+OutFile "example1.exe"
+
+; Request application privileges for Windows Vista
+RequestExecutionLevel user
+
+; Build Unicode installer
+Unicode True
+
+; The default installation directory
+InstallDir $DESKTOP\Example1
+
+;--------------------------------
+
+; Pages
+
+Page directory
+Page instfiles
+
+;--------------------------------
+
+; The stuff to install
+Section "" ;No components page, name is not important
+
+  ; Set output path to the installation directory.
+  SetOutPath $INSTDIR
+
+  ; Put file there
+  File example1.nsi
+
+SectionEnd</code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full text-center p-4 pin-b">
+      <a href="https://github.com/NSIS-Dev/highlight.js" class="text-indigo-600">Code on GitHub</a>
+    </footer>
+    <script type="module">
+      import nsis from '../../src/nsis.ts';
+
+      window.addEventListener('DOMContentLoaded', () => {
+        hljs.registerLanguage('nsis', nsis);
+        hljs.highlightAll();
+      });
+    </script>
+  </body>
+</html>
