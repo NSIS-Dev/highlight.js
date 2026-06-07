@@ -1,15 +1,16 @@
-# dependencies
-bower_components/
+# package managers
 node_modules/
-vendor/
-
-# package manager files
 npm-debug.log*
-yarn-error.log
+package-lock.json
 shrinkwrap.yaml
+yarn-error.log
+yarn.lock
 
-# development
-tsconfig.tsbuildinfo
+# build artifacts
+bin/
+dist/
+lib/
 
-# project specific
-todo.md
+# tests
+coverage/
+test-results/
