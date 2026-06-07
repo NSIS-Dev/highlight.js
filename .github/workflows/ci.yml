@@ -3,10 +3,9 @@ name: "Run tests on NodeJS"
 on:
   push:
     paths:
-      - ".github/workflows/node.yml"
-      - "e2e/**"
+      - ".github/workflows/cu.yml"
+      - "tests/**"
       - "src/**"
-      - "types/**"
       - "package.json"
       - "pnpm-lock.yaml"
       - "vitest.config.ts"
