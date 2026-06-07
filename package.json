@@ -3,7 +3,6 @@
 	"version": "0.0.0",
 	"description": "highlight.js syntax definition for the NSIS language",
 	"license": "BSD-3-Clause",
-	"main": "nsis.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/highlightjs/highlightjs-nsis.git"
